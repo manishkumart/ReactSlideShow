@@ -1,0 +1,329 @@
+.container {
+  display: flex;
+  height: 100vh;
+  /* 100% of the viewport height */
+  background-color: #F8F8FF;
+
+}
+
+.box {
+  margin: 10px;
+  /* Spacing between boxes */
+  border-radius: 15px;
+  /* Rounded corners */
+  overflow-y: auto;
+  /* Enables scrolling on overflow */
+
+}
+
+.box:first-child {
+  flex: 1 1 10%;
+  /* Flex-grow, flex-shrink, flex-basis */
+  overflow-y: scroll;
+  /* Scrollbar if content overflows */
+  margin: 10px;
+  /* Space between the boxes */
+  border: 5px solid white;
+  /* Border around the box */
+  border-radius: 15px;
+  /* Rounded corners */
+  overflow-y: auto;
+  /* Scroll vertically if needed */
+}
+
+.box:nth-child(2) {
+  flex: 1 1 70%;
+  /* Second box takes half the container's width */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* No scrollbar */
+}
+
+.box:last-child {
+  flex: 1 1 30%;
+  /* Third box takes up the remaining space */
+  border: 5px solid white;
+  overflow-y: scroll;
+  /* Scrollbar if content overflows */
+}
+
+.slide {
+  margin: 15px;
+  /* Space inside each slide */
+  text-align: center;
+  /* Center the content */
+  position: relative;
+  /* Needed to position the text over the image */
+}
+
+.slide img {
+  width: 100%;
+  /* Full width of the container */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 8px;
+  /* Rounded corners for the image */
+  margin-bottom: 10px;
+  /* Space between the image and the text */
+}
+
+.slide-name {
+  display: block;
+  /* Makes the div a block element */
+  text-align: center;
+  /* Center the text */
+  color: black;
+  /* Text color */
+  font-weight: bold;
+  /* Make the text bold */
+  padding: 5px;
+  /* Padding around the text */
+  border-radius: 5px;
+  /* Rounded corners for the text background */
+  /* No need for the absolute positioning styles */
+}
+
+
+
+.main {
+  text-align: center;
+  /*margin-top: 20%;*/
+}
+
+.flex_row {
+  justify-content: center;
+  display: flex;
+  padding-top: 20px;
+}
+
+.thumbnail {
+  padding-left: 20px;
+}
+
+.clicked {
+  border: 5px solid black;
+}
+
+
+
+.chatbox-container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.chat-avatar {
+  width: 20px;
+  /* Set your desired width */
+  height: 20px;
+  /* Set your desired height */
+  border-radius: 20px;
+  /* Makes the image round */
+  margin-right: 10px;
+  /* Space between the image and the text */
+}
+
+
+.chat-text {
+  flex-grow: 1;
+}
+
+.chat-message {
+  display: flex;
+  align-items: center;
+  /* Aligns the items vertically in the center */
+  margin: 10px 0;
+  /* Space between messages */
+}
+
+.chat-avatar {
+  width: 20px;
+  /* Set your desired width */
+  height: 20px;
+  /* Set your desired height */
+  border-radius: 20px;
+  /* Makes the image round */
+}
+
+.sender {
+  justify-content: flex-end;
+  /* Aligns the content to the right */
+}
+
+.sender .chat-avatar {
+  margin-left: 10px;
+  /* Space between the image and the text for sender */
+}
+
+.bot {
+  justify-content: flex-start;
+  /* Aligns the content to the left */
+}
+
+.bot .chat-avatar {
+  margin-right: 10px;
+  /* Space between the image and the text for bot */
+}
+
+.chat-text {
+  flex-grow: 1;
+  /* Add padding as necessary, particularly if you want the text to not stretch too long */
+}
+
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 5px;
+  margin-bottom: 20px;
+  /* Space for input box */
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 10px;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-send {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #555;
+  color: white;
+}
+
+/* Adjust the last box specifically for chat */
+.box:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Pushes chat to bottom */
+}
+
+/* ImageSlider.css */
+
+.chat-message {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.sender {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #e5e5ea;
+  color: black;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  /* ... other styles remain the same */
+}
+
+/* Chat Styles */
+
+#chatContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.messageContainer {
+  display: flex;
+  margin: 10px;
+}
+
+#botWindow,
+#userWindow {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#botWindow {
+  background-color: #e5e5ea;
+  align-self: flex-start;
+}
+
+#userWindow {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.senderName {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.senderNameLeft {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  align-self: flex-start;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  /* Adjust as needed */
+  left: 0;
+  right: 0;
+}
+
+.btns {
+  cursor: pointer;
+}
+
+.buttons {
+  height: 20px;
+  width: 20px;
+}
+
+
+.thumbnail-container {
+  white-space: nowrap;
+  /* To line up the thumbnails horizontally */
+  overflow-x: auto;
+  /* To add horizontal scrollbar */
+}
+
+.flex_row>.thumbnail {
+  display: inline-block;
+  /* Align thumbnails in a row */
+  margin: 0 5px;
+  /* Add some space between thumbnails */
+}
+
+.thumbnail img {
+  max-width: 100px;
+  max-height: 70px;
+  border-radius: 8px;
+}
